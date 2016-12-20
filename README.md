@@ -1,5 +1,5 @@
 # cp2ya
-Утилита для копирования файлов на yandex disk из командной строки linux на основе либы YaDiskClient (https://github.com/TyVik/YaDiskClient).
+Утилита для копирования файлов на yandex disk из командной строки linux на основе либы [YaDiskClient](https://github.com/TyVik/YaDiskClient).
 Для установки pip install YaDiskClient или easy_install YaDiskClient
 
 #Использование
