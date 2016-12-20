@@ -6,7 +6,7 @@
 Имя пользователя и пароль от yandex необходимо указать в конфигурационном файле в домашнем каталоге пользователя ~/.cp2ya
 
 # Формат конфига
-  [auth]
- login = userName@yandex.ru
- password = userPassword
+[auth]\r
+login = userName@yandex.ru\r
+password = userPassword\r
 
