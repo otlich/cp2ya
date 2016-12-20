@@ -1,0 +1,4 @@
+#Path ~/.cp2ya
+[auth]
+login = userName@yandex.ru
+password = userPassword
