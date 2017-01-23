@@ -14,10 +14,11 @@ def getUserInfo(param):
     conf = ConfigParser.RawConfigParser()
     conf.read(os.path.expanduser('~/.cp2ya'))
     try:
-        conf.get('auth',param)
+        result = conf.get('auth',param)
     except:
         print "Can't' read config %s" %(os.path.expanduser('~/.cp2ya'))
         sys.exit()
+    return result
 
 
 def auth():
