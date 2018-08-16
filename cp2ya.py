@@ -29,6 +29,12 @@ def auth():
 
 
 def copy_dir(ffolder, to):
+    try:
+        listfir = os.listdir(ffolder)
+    except OSError:
+        print 'Pass file or folder %s' %ffolder
+        return True
+    
     for f in os.listdir(ffolder):
         if os.path.isfile(os.path.join(ffolder,f)):
             upload(os.path.join(ffolder,f),os.path.join(to,f))
@@ -43,6 +49,7 @@ def mkdir(path):
         mkdir(os.path.split(path)[0])
     print "Create dir on YaDisk %s" %path
     return True
+
 def upload(filepath,to):
     print 'Copy %s to %s' %(filepath,to)
     try:
@@ -54,6 +61,7 @@ def upload(filepath,to):
             upload(filepath,to)
         else:
             print e
+            
 if __name__ == '__main__':
     arg = sys.argv
 
