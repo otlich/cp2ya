@@ -54,25 +54,25 @@ def upload(filepath,to):
             upload(filepath,to)
         else:
             print e
+if __name__ == '__main__':
+    arg = sys.argv
 
-arg = sys.argv
+    try:
+        from_file  = arg[1]
+    except:
+        print "Error. Need srcFile. Usage: cpya srcFile dstFile"
+        sys.exit()
+    path, filename = os.path.split(from_file)
 
-try:
-    from_file  = arg[1]
-except:
-    print "Error. Need srcFile. Usage: cpya srcFile dstFile"
-    sys.exit()
-path, filename = os.path.split(from_file)
+    try:
+        to_file = arg[2]
+    except:
+        to_file = '/%s' %filename
 
-try:
-    to_file = arg[2]
-except:
-    to_file = '/%s' %filename
-
-if os.path.exists(from_file):
-    if os.path.isfile(from_file):
-        upload(from_file, to_file)
-    elif os.path.isdir(from_file):
-        copy_dir(from_file, to_file)
-else:
-    print 'File or Folder not found'
+    if os.path.exists(from_file):
+        if os.path.isfile(from_file):
+            upload(from_file, to_file)
+        elif os.path.isdir(from_file):
+            copy_dir(from_file, to_file)
+    else:
+        print 'File or Folder not found'
